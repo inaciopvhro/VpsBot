@@ -1,8 +1,6 @@
 import qrcode from 'qrcode-terminal';
 import { Client, LocalAuth } from 'whatsapp-web.js';
 
-const permissaoBot = ["556992102573@c.us"];
-
 const client = new Client({
   authStrategy: new LocalAuth()
 });
