@@ -12,6 +12,6 @@ client.on('qr', qr => {
     qrcode_terminal_1.default.generate(qr, { small: true });
 });
 client.on('ready', () => {
-    console.log('Client is ready!');
+    console.log('rondando sistema');
 });
 client.initialize();
