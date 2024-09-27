@@ -1,0 +1,20 @@
+name: "Deploy para VPS"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Baixar o codigo"
+        uses: actions/checkout@v4
+      - name: "Copiar arquivos para VPS"
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: "141.136.42.73"
+          username: "root"
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: "/VpsBot"
